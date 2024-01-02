@@ -1,0 +1,21 @@
+*{
+    text-align: center;   
+}
+h1{
+    font-size: 50px;
+}
+html{
+    background-color:darkseagreen;
+}
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+body{
+    width: 900px;
+    margin: auto;
+}
+p{
+    font-size: 1.1em;
+}
