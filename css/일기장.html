@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>일기장</title>
+    <style>
+        *{
+            box-sizing: border-box;   
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        .title, .bottom, .date{
+            width: 600px;
+            height: 100px;
+        }
+        .picture, .paragraph{
+            width: 600px;
+            height: 300px;
+        }
+        .테두리{
+            margin-top: 30px;
+            height: 850px;
+            background-color: darkseagreen;
+        }
+        .emotion{
+            width: 600px;
+            height: 100px;
+        }
+        .title{
+            text-align: center;
+            line-height: 70px;
+            color: darkgreen;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .date{
+            text-align: right;
+        }
+        img{
+            width: 550px;
+            height: 250px;
+        }
+        .paragraph{
+            text-align: center;
+            line-height: 50px;
+            color: darkgreen;
+            font-size: 20px;
+        }
+        p:nth-child(4){
+            font-size: 30px;
+        }
+        .bottom{
+            text-align: center;
+        }
+        .emo{
+            font-size: 25px;
+        }
+        .간식{
+            font-size: 28px;
+            font-weight: bolder;
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <fieldset class="테두리">
+        <header class="top">
+            <fieldset class="title">😀나만의 일기장😀</fieldset>
+            <fieldset class="date">
+                <div>2024년 1월 3일 수요일</div>
+                <div>
+                    <div>감정상태</div>
+                    <label class="emo">🤨</label>
+                    <input type="range">
+                    <label class="emo">😀</label>
+                </div>
+            </fieldset>
+        </header>
+        <main class="content">
+            <fieldset class="picture">
+                <img src="/images/고양이.JPG" alt="고양이사진">
+            </fieldset>
+            <fieldset class="paragraph">
+                <p>오늘 몹시 기분이 안 좋다.😾</p>
+                <p>주인이 바빠서 <span class="간식">간식</span>🍭을 못 먹었다.</p>
+                <p>내일도 안주면 다 엎을거다.</p>
+                <p>🐈</p>
+            </fieldset>
+        </main>
+        <footer class="bottom">🧙OZ🧙</footer>
+    </fieldset>
+</body>
+</html>
