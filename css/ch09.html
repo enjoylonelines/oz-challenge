@@ -6,15 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @font-face {
+            font-family: 'SF_HambakSnow';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             margin: 0;
             background-color: darkslategray;
             display: flex;
-            justify-content: center;
+
         }
 
         * {
             box-sizing: border-box;
+            font-family: 'SF_HambakSnow';
         }
 
         .container {
@@ -23,33 +31,201 @@
             width: 1700px;
             height: 300px;
             border-radius: 30px;
-        
+
+            display: flex;
+        }
+
+        .left-bar {
+            background-color: yellowgreen;
+            width: 400px;
+            height: 300px;
+            border-radius: 30px 0 0 30px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow: scroll;
+            /* 부모한테 overflow 속성을 부여해야 함 */
+        }
+
+        .right-bar {
+            width: 1300px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .content-module {
+            position: relative;
+            top: 20px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            /*  이거 왜 생긴거냐? */
+            margin: 0;
+
+
         }
-        .left-bar{
-            
+
+        ul>li {
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li>span {
+            margin: 5px;
+        }
+
+        .bigger {
+            font-size: 30px;
+        }
+
+        .left-bar::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, Opera*/
+        }
+
+        .right-bar {
+            overflow: scroll;
+        }
+
+        .right-bar::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, Opera*/
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <section class="left-bar">
-            <div class="content">
-                <p>이모티콘</p>
-                <div class="module">
-                    <p>Fun sidebar</p>
-                    <p>Enjoy your time here!</p>
-                    <ul class="list">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
+        <section class="left-bar" class="scroll">
+            <ul class="content-module">
+                <img src="/images/smile.png" alt="웃는 얼굴" width="50px" height="50px">
+                <li class="bigger">Fun Sidebar</li>
+                <li>Enjoy your time here!</li>
+                <li>
+                    <span>
+                        <img src="/images/game.png" alt="게임기사진" width="50px" height="50px">
+                    </span>
+                    <span>Play a Game</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/music.png" alt="음표사진" width="50px" height="50px">
+                    </span>
+                    <span>Listen to Music</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/movie.png" alt="영화사진" width="50px" height="50px">
+                    </span>
+                    <span>Watch a Movie</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/game.png" alt="게임기사진" width="50px" height="50px">
+                    </span>
+                    <span>Play a Game</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/music.png" alt="음표사진" width="50px" height="50px">
+                    </span>
+                    <span>Listen to Music</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/movie.png" alt="영화사진" width="50px" height="50px">
+                    </span>
+                    <span>Watch a Movie</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/game.png" alt="게임기사진" width="50px" height="50px">
+                    </span>
+                    <span>Play a Game</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/music.png" alt="음표사진" width="50px" height="50px">
+                    </span>
+                    <span>Listen to Music</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/movie.png" alt="영화사진" width="50px" height="50px">
+                    </span>
+                    <span>Watch a Movie</span>
+                </li>
+
+            </ul>
         </section>
-        <section class="right-bar"></section>
+        <section class="right-bar" class="scroll">
+            <ul class="content-module">
+                <li class="bigger">즐거운 초격차 교실!</li>
+                <li>welcome to the fun zone of OZz!</li>
+                <li>
+                    <span>
+                        <img src="/images/game.png" alt="게임기사진" width="50px" height="50px">
+                    </span>
+                    <span>Play a Game</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/music.png" alt="음표사진" width="50px" height="50px">
+                    </span>
+                    <span>Listen to Music</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/movie.png" alt="영화사진" width="50px" height="50px">
+                    </span>
+                    <span>Watch a Movie</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/game.png" alt="게임기사진" width="50px" height="50px">
+                    </span>
+                    <span>Play a Game</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/music.png" alt="음표사진" width="50px" height="50px">
+                    </span>
+                    <span>Listen to Music</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/movie.png" alt="영화사진" width="50px" height="50px">
+                    </span>
+                    <span>Watch a Movie</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/game.png" alt="게임기사진" width="50px" height="50px">
+                    </span>
+                    <span>Play a Game</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/music.png" alt="음표사진" width="50px" height="50px">
+                    </span>
+                    <span>Listen to Music</span>
+                </li>
+                <li>
+                    <span>
+                        <img src="/images/movie.png" alt="영화사진" width="50px" height="50px">
+                    </span>
+                    <span>Watch a Movie</span>
+                </li>
+
+            </ul>
+    </div>
+    </section>
     </div>
 </body>
 
