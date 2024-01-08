@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snow man</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        body{
+            background-color: lightskyblue;
+            height: 100vh;
+            
+        }
+        .container{
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container,header, snow-head, main, footer, .hat{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        main, footer, .snow-head{
+            background-color: aliceblue;
+        }
+        .snow-head{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+        }
+        .hat, .emo, .eye1, .eye2{
+            position: absolute;
+        }
+        .emo{
+            flex-direction: row;
+        }
+        .up{
+            width: 40px;
+            height: 40px;
+            background-color: black;
+            position: relative;
+            bottom: 45px;
+        }
+        .down{
+            width: 70px;
+            height: 8px;
+            background-color: black;
+            position: relative;
+            bottom: 45px;
+        }
+        .eye1, .eye2{
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background-color: black;
+            z-index: 1;
+        }
+        .eye1{
+            position: absolute;
+            left: -6px;
+            bottom: 2px;
+        }
+        .eye2{
+            position: absolute;
+            right: 10px;
+            bottom: 2px;
+        }
+        .mouth{
+            position: absolute;
+            width: 14px;
+            height: 6px;
+            background-color: black;
+            top: 3px;
+            right: 1px;
+            border-radius: 0 0 5px 5px;
+        }
+        main{
+            position: relative;
+            width: 75px;
+            height: 75px;
+            border-radius: 37.5px;
+        }
+        footer{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        .hand1, .hand2{
+            position: absolute;
+            width: 70px;
+            height: 5px;
+            background-color:saddlebrown;
+            z-index: -1;
+            top: 20px;
+        }
+        .hand1{
+            left: 50px;
+            transform: rotate(-30deg);
+
+        }
+        .hand2{
+            right: 50px;
+            transform: rotate(30deg);
+        }
+        .btn1, .btn2, .btn3{
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 3px;
+            background-color: black;
+            left: 30px;
+        }
+        .btn1{
+            bottom: 50px;
+        }
+        .btn3{
+            bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="snow-head"></div>
+            <div class="hat">
+                <div class="up"></div>
+                <div class="down"></div>
+            </div>
+            <div class="emo">
+            <div class="eye1"></div>
+            <div class="eye2"></div>
+                <div class="mouth"></div>
+            </div>
+        </header>
+        <main>
+            <div class="hands">
+                <div class="hand1"></div>
+                <div class="hand2"></div>
+            </div>
+            <div class="btn">
+                <div class="btn1"></div>
+                <div class="btn2"></div>
+                <div class="btn3"></div>
+            </div>
+        </main>
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>
