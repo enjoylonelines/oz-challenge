@@ -1,0 +1,114 @@
+.header{
+    width: 100%;
+    background-color: aliceblue;
+}
+.header-content{
+    width: 100%;
+    height: 7rem;  /*header 컨테이너 총 높이*/
+    max-width: 105rem;
+    margin: auto;
+    justify-content: center;
+}
+.header-content__upper_bar{
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem; /*upper bar 높이*/
+}
+.header-content__logo{
+        width: 18rem;
+        height: 3rem;
+}
+.header-content__logo span{
+    line-height: 1.5;
+    width: 8rem;
+    font-size: 2rem;
+    font-weight: 900;
+    color:dimgrey ;
+}
+.header-content__input{
+    width: 25rem;
+    height: 3rem;
+    align-items: center;
+}
+.header-content__upper_nav{
+    justify-content: space-evenly;
+}
+.header-content__upper_nav p{
+    flex-grow: 1;
+}
+.header-content__input{
+    justify-content: space-evenly;
+    width: 20rem;
+}
+.intro{
+    padding-right: 1.6rem;
+    border-right: 0.9px solid gray;
+}
+.icon input{
+    border: none;
+    background-color: aliceblue;
+}
+.menu{
+    display: none;
+}
+
+
+.header-content__nav{
+    width: 100%;
+    height: 3rem;        /*컨텐츠 네비 높이*/
+    align-items: center;
+}
+.header-content__nav ul{
+    padding: 0;
+    list-style-type: none;
+    margin-right: 2rem;
+}
+.nav-bar li{
+    display: inline;
+    margin-right: 1rem;
+}
+.nav-bar li{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.nav-brand-bar{
+    padding: 1rem;
+    border-radius: 1rem;
+    height: 1.75rem;
+    background-color: lightgrey;
+    justify-content: center;
+    align-items: center;
+}
+.nav-brand-bar ul{
+    margin: 0;
+}
+.nav-brand-bar li{
+    display: inline;
+    margin: 0.5rem;
+}
+
+
+@media screen and (max-width:768px){
+    .icon .user {
+        display: none;
+    }
+    .icon .menu{
+        display: inline;
+    }
+    .hidden{
+        display: none;
+    }
+    .header-content__upper_nav{
+        width: 10rem;
+    }
+    .intro{
+        border: none;
+    }
+    .header-content__nav{
+        display: none;
+    }
+    .header-content{
+        height: 4rem;
+    }
+}

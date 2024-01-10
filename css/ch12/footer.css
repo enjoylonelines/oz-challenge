@@ -1,0 +1,99 @@
+ul, li{margin: 0; padding: 0;}
+.footer{
+    width: 100%;
+    height: 17.5625rem;
+    margin: 0;
+    padding: 0 2.5rem 3rem;
+    margin-top: 10rem;
+}
+.footer-cont{
+    margin: 0;
+    padding: 0;
+    width: 106rem;
+    height: 17.5625;
+}
+.cont-area{
+    width: 80.25rem;
+    height: 17.5625rem;
+    margin: 0 auto;
+    color: #666;
+}
+.cont-head{
+    max-width: 100%;
+    height: 4rem;
+    padding: 1rem 0;
+    margin: 0;
+    position: relative;
+}
+.select{
+    border: none;
+}
+.cont-body{
+    max-width: 100%;
+    height: 13.5rem;
+    padding-top: 1rem;
+    border-top: 0.5px solid gray;   
+}
+.dropdown-wrap{
+    width: 6.4925rem;
+    height: 2rem;
+    float: left;
+}
+.sns-link{
+    width: 36.108875rem;
+    height: 2rem;
+    float: right;
+    justify-content: space-between;
+}
+.sns-link ul li{
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-left: 1.25rem;
+}
+.cont-link{
+    width: 100%;
+    height: 1rems;
+}
+.cont-link li{
+    display: inline-block;
+    font-size: 0.85rem;
+    line-height: 1rem;
+}
+.call-to{
+    margin-top: 0.5rem;
+}
+.call-to li{
+    display: inline-block;
+    font-size: 0.85rem;
+}
+.call-to li::after{
+    content: " | ";
+}
+.comp-info{
+    width: 73.5rem;
+    height: 6.5rem;
+    padding-right: 13.75rem;
+    margin-top: 1rem;
+}
+.info span{
+    margin-right: 1rem;
+    font-size: 0.85rem;
+}
+
+.comp-info{
+    margin-top: 0.25rem;
+
+}
+.info{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.info span:nth-child(3){
+    border-radius: 0.7rem;
+    background-color: gray;
+    color:aliceblue;
+    padding: 0 0.6rem;
+}
+.comp-info p{
+    font-size: 0.8rem;
+}
