@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            margin: 0;
+        }
+        .cont{
+            width: 100vw;
+            height: 100vh;
+            background-color: darkseagreen;
+        }
+        .area{
+            flex-direction: column;
+        }
+        .area p:nth-child(1){
+            font-size: 2rem;
+        }
+        .area p:nth-child(2){
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media screen and (max-width:1800px) {
+            .cont{
+                background-color: green;
+            }   
+            .text::after{
+                content: '일반 pc';
+            }
+
+        }
+        @media screen and (max-width:1200px) {
+            .cont{
+                background-color: green;
+            }   
+            .text::after{
+                content: '아이패드 pro';
+            }
+
+        }
+        @media screen and (max-width:900px) {
+            .cont{
+                background-color: red;
+            }
+            .text::after{
+                content: '아이패드 에어';
+            }       
+        }
+        @media screen and (max-width:768px) {
+            .cont{
+                background-color: yellowgreen;
+            }
+            .text::after{
+                content: '아이패드';
+            }
+        
+        }
+        @media screen and (max-width:500px) {
+            .cont{
+                background-color: blue;
+            }
+            .text::after{
+                content: '아이패드 미니';
+            }           
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="cont flex"> 
+        <div class="area flex">
+            <p>아래 화면 크기로 구경해봐요</p>
+            <p class="text"></p>
+        </div>
+    </div>
+</body>
+</html>
