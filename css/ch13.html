@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            height: 3rem;
+            background-color: darkseagreen;
+            min-width: 70rem;
+        }
+
+        ul {
+            width: 112rem;
+            height: 3rem;
+            align-items: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        li {
+            width: 8rem;
+            height: 3rem;
+            background-color: darkgreen;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        li:nth-child(1) {
+            background-color: darkslateblue;
+            color: white;
+        }
+
+        li input {
+            border: none;
+            background-color: darkslateblue;
+            font-size: 1.7rem;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            margin-left: 18rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media screen and (max-width:768px) {
+            .container ul {
+                display: block;
+            }
+
+            ul li {
+                width: 100vw;
+            }
+
+            .hidden {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .hidden:hover ul li{
+                display: flex;
+
+            }
+        }
+        .menu-hidden{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="container">
+        <ul class="max flex">
+            <li class="flex hidden">
+                <input type="button" value="&#9776">
+                <ul>
+                    <li class="flex menu-hidden">홈</li>
+                    <li class="flex menu-hidden">소개</li>
+                    <li class="flex menu-hidden">서비스</li>
+                    <li class="flex menu-hidden">문의</li>
+                </ul>
+            </li>
+            <li class="flex menu">홈</li>
+            <li class="flex menu">소개</li>
+            <li class="flex menu">서비스</li>
+            <li class="flex menu">문의</li>
+        </ul>
+    </nav>
+</body>
+
+</html>
