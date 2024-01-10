@@ -1,0 +1,68 @@
+.content-container{
+    width: 100%;
+    height: 20rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content-container p.one {
+    color: blueviolet;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.content-container p.two {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.main-container{
+    width: 100%;
+    height: 30rem;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+div.btn{
+    width: 20rem;
+    height: 25rem;
+    background-color: blueviolet;
+    border-radius: 2rem;
+    transition: all 0.2s linear;
+    filter: blur(2px);
+    min-width: 20rem;
+
+}
+div.btn:hover{
+    transform: scale(1.1);
+    filter: none;
+}
+a.url{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.img-cont{
+    width: 14rem;
+    height: 14rem;
+    margin: 3rem;
+    background-image: url(/ch16/img/번개.png);
+    background-size: 14rem 14rem;
+}
+.content-cont{
+    width: 100%;
+    height: 5rem;
+    text-align:center;
+}
+.content-cont p{
+    text-decoration: none;
+    color: blue;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+@media screen and (max-width:768px) {
+    div.btn{
+        margin-bottom: 10rem;
+    }
+
+}

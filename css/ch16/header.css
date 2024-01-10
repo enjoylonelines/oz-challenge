@@ -1,0 +1,140 @@
+
+header.header {
+    width: 100%;
+    height: 25rem;
+}
+
+.img-container {
+    width: 100%;
+    height: 20rem;
+}
+
+.img {
+    width: 100vw;
+    height: 20rem;
+    background-image: url(/ch16/img/school.jpeg);
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: overlay;
+    background-repeat: repeat;
+    background-size: 30rem 20rem;
+}
+
+.content {
+    color: black;
+    /* 텍스트 색상 지정 */
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* 배경 이미지와 레이어 위에 텍스트가 나타나도록 설정 */
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.blink {
+    animation: blink 0.5s step-end infinite;
+}
+
+@keyframes blink {
+    50%{
+        opacity: 0;
+    }
+}
+
+.nav-cont{
+    width: 100%;
+    height: 5rem;
+}
+
+.nav{
+    width: 100%;
+    height: 5rem;
+    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    width: 8rem;
+    height: 5rem;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 900;
+    padding: 1rem;
+}
+ul.flex{
+    width: 40rem;
+    height: 5rem;
+    justify-content: space-evenly;
+    align-items: center;
+}
+ul li{
+    font-size: 1.5rem;
+    color: #fff;
+
+}
+ul li:hover{
+    border-bottom: 0.3rem solid purple;
+
+}
+.menu-btn{
+    border: none;
+    background-color: black;
+    color: #fff;
+    font-size: 2.5rem;
+    display: none;
+    padding: 0;
+}
+.menu{
+    height: 5rem;
+}
+.block{
+    display: none;
+    background-color: black;
+}
+.block ul{
+    text-align: center;
+}
+.block ul li{
+    display: inline-block;
+    
+    height: 3rem;
+}
+
+@media screen and (max-width:768px) {
+    .menu{
+        width: 5rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu{
+        display: block;
+    }
+    
+    /* ul.flex{
+        display: none;
+    } */
+    ul.block{
+        display: block;
+    }
+    ul.block li.hidden{
+        width: 100%;
+    }
+    .menu-btn{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    ul.flex{
+        justify-content: flex-end;
+    }
+}
+
+.menu-btn:active{
+    background-color: blueviolet;
+}
+.menu-btn:active ul.flex{
+    display: flex;
+}
+
