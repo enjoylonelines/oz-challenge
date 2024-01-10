@@ -1,0 +1,147 @@
+/* 전체 세팅 */
+
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    margin: 0;
+}
+.chat-container{
+    background-color:darkseagreen;
+    height: 100%;
+}
+
+/* 채팅 스크린 세팅 */
+.chat-screen{
+    height: calc(100% - 120px);
+    overflow: scroll;
+}
+.chat-screen_bar{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    height: 90px;
+}
+
+/* 유저정보표시 부분 */
+.user{
+    margin: 16px;
+    height: 7cqmax;
+}
+.user-colm{
+    float: left;
+}
+.chat-user_img{
+    width: 50px;
+    height: 50px;
+    border: 2px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+
+.user_name, .user_cnt{
+    margin: 10px;
+}
+.user_cnt{
+    font-size: 12px;
+    color: grey;
+}
+
+/* 전송폼 부분 */
+.chat-form{
+    height: 120px;
+    background-color: white;
+}
+.chat-form_field{
+    height: 120px;
+}
+.form_msg{
+    width: calc(100% - 120px);
+    height: 120px;
+    font-size: 22px;
+    padding: 10px;
+    border: none;
+    float: left;
+}
+.form_msg:focus{
+    outline: none;
+}
+.form_btn{
+    height: 120px;
+    width: 120px;
+    float: right;
+    background-color: darkseagreen;
+    border-radius: 10px;
+    font-size: 25px; 
+}
+.form_btn:active{
+    background-color: red;
+    
+}
+
+.text{
+    border: 2px solid darkgreen;
+    width: 200px;
+    height: 50px;
+    line-height: 30px;
+    border-radius: 10px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: darkgreen;
+    color: aliceblue;
+    position: relative;
+}
+.left::before{
+    content: "";
+    position: absolute;
+    border-right: 16px solid darkgreen;
+    border-bottom: 16px solid transparent; 
+    /* 겹치는 부분 투명하게,,, */
+    top: 10px;
+    left: -12px;
+}
+.text:hover{
+    background-color: darkolivegreen;
+    border: 2px solid darkolivegreen;
+}
+.text:hover:before{
+    border-right: 16px solid darkolivegreen;
+}
+.empty{
+    height: 90px;
+}
+.img{
+    width: 50px;
+    height: 50px;
+    background-color: darkgreen;
+    border-radius: 10px;
+}
+
+.texts{
+    display: flex;
+    flex-direction: column;
+}
+.right{
+    margin-left: auto;
+    margin-right: 1.5rem;
+}
+
+.right::after{
+    content: "";
+    position: absolute;
+    border-left: 16px solid darkgreen;
+    border-bottom: 16px solid transparent; 
+    /* 겹치는 부분 투명하게,,, */
+    top: 10px;
+    left: 192px;
+}
+.right:hover:after{
+    border-left: 16px solid darkolivegreen;
+}
