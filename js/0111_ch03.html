@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="name"></h1>
+    <p class="animal"></p>
+    <p class="fruit"></p>
+    <script>
+        const nameElement = document.querySelector('.name');
+        let name = `제 이름은 ${prompt('나마에와?')} 입니다`;
+        nameElement.textContent = name;
+        
+        const animalElement = document.querySelector('.animal');
+        let animal = `제 이름은 ${prompt('좋아하는 애니멀??')} 입니다`;
+        animalElement.textContent = animal;
+        
+        const fruitElement = document.querySelector('.fruit');
+        let fruit = `제 이름은 ${prompt('좋아하는 과일?')} 입니다`;
+        fruitElement.textContent = fruit;
+        
+    </script>
+</body>
+</html>

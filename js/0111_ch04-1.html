@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .black{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <button  onclick="whiteMode()">white</button>
+    <button id="black" onclick="darkMode()">black</button>
+    <script>
+        function darkMode(){
+            var body = document.body;
+            body.classList.add('black');            
+        }   
+        function whiteMode(){
+            var body = document.body;
+            body.classList.remove('black');             
+        }   
+        
+    </script>
+</body>
+</html>

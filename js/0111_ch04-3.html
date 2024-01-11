@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 7px;
+        }
+        html{
+            text-align: center;
+        }
+        body{
+            margin: auto;
+            width: 500px;
+            height: 900px;
+        }
+        #간격{
+            width: 600px;
+            height: 700px;
+            background-color: darkseagreen;    
+            border-radius: 20px;
+            box-shadow: 5px 5px darkorange, 10px 10px darkgreen, 15px 15px red;
+            
+        }
+        #gray{
+            color: gray;
+        }
+        #인증{
+            text-align: right;
+        }
+        .btn{
+            margin-right: 10px;
+        }
+        .인풋박스{
+            width: 500px;
+            height: 50px;
+            margin: 5px;
+            border-radius: 10px;
+        }
+        h1{
+            padding-top: 20px;
+        }
+        .number-box{
+            height: 50px;
+            border-radius: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="간격">
+        <h1>OZ 초격차 회원가입</h1>     
+        <div id="개인정보">
+        <input type="text" placeholder="이메일 입력" class="인풋박스" id="개인정보1">
+        <br>
+        <input type="text" placeholder="이름 입력" class="인풋박스" id="개인정보2">
+        <br>
+        <input type="text" placeholder="비밀번호 입력"class="인풋박스" id="개인정보3">
+        <br>
+        <input type="text" placeholder="비밀번호 다시 입력" class="인풋박스" id="개인정보4">
+       </div>
+
+       <div id="번호">
+        <input type="text" placeholder="010" class="number-box" id="num1">
+        -
+        <input type="text" placeholder="1234" class="number-box" id="num2">
+        -
+        <input type="text" placeholder="5678" class="number-box" id="num3">
+       </div>
+
+       <div id="인증">
+        000000
+       <button class="btn">인증번호전송</button>
+       <br>
+       3:00
+       <button class="btn" id="gray">인증완료</button>
+       </div>
+
+        <select name="local" id="local" class="인풋박스">
+            <option>-지역을 선택하세요-</option>
+            <option>서울</option>
+            <option>경기</option>
+            <option>인천</option>
+        </select>
+
+       <div>
+        <input type="radio" name="sex" id="male">
+        <label for="sex">여성</label>
+        <input type="radio" name="sex" id="female">
+        <label for="sex">남성</label>
+       </div>
+       <button class="인풋박스" onclick="user()">가입하기</button>
+    </div>
+    <script>
+        function user(){
+            console.log(document.getElementById('개인정보1').value);
+            console.log(document.getElementById('개인정보2').value);
+            console.log(document.getElementById('개인정보3').value);
+            console.log(document.getElementById('개인정보4').value);
+
+            console.log(document.getElementById('num1').value);
+            console.log(document.getElementById('num2').value);
+            console.log(document.getElementById('num3').value);
+            console.log(document.getElementById('local').value);
+
+            // console.log(document.querySelector('#male').checked);
+            // console.log(document.querySelector('#female').checked);
+            gender();
+        }
+        function gender(){
+            const male = document.querySelector('#male').checked;
+            if(male) console.log('여성');
+            else console.log('남성');
+        }
+    </script>
+</body>
+</html>
