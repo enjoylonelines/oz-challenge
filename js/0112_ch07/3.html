@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문</title>
+</head>
+<body>
+    <h1>4의 배수 5개씩 출력하기</h1>
+    <div class="cont" style="font-size: 2rem; font-weight: 700;"></div>
+    <script>
+        let n = 100;
+        const cont = document.querySelector('.cont');
+             
+        while(n < 500){
+            const div = document.createElement('div');
+            for(let i = 0; i < 5; i++){
+                div.textContent += n;
+                div.textContent += '\u00a0';
+                n +=4;
+                if(n > 500) break;
+            }
+          
+            cont.append(div);
+            n +=4;
+        }
+    </script>
+</body>
+</html>

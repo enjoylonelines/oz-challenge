@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적표</title>
+    <style>
+        *{margin: 1rem;}
+        .table{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>다음 조건에 맞게 코드를 작성</h2>
+
+    <h3>
+        <div>조건:</div>
+        <div>1. 입력창을 띄워 사용자의 0~100 점수를 입력 받는다</div>
+        <div>2. 입력 받은 점수에 맞는 성적 등급을 나눈다.</div>
+        <div class="cont">
+            <table class="table">
+                <tr>
+                    <th>점수</th>
+                    <th>90 이상</th>
+                    <th>80~89점</th>
+                    <th>70~79점</th>
+                    <th>60~69점</th>
+                    <th>60점 미만</th>
+                </tr>
+                <tr>
+                    <th>학점</th>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>F</td>
+                </tr>
+            </table>
+            <div>3. 나의 기말고사 점수는 ___점, 학점은 ___!!!</div>
+            <hr>
+        </div>
+    </h3>
+    <script>
+        const score = prompt('기말고사 점수를 입력하세요.');
+        let grade;
+        if(score >= 90) grade = 'A';
+        else if(score >= 80 && score < 90) grade = 'B';
+        else if(score >= 70 && score < 80) grade = 'C';
+        else if(score >= 60 && score < 70) grade = 'D';
+        else grade = 'F';
+        
+        const cont = document.querySelector('.cont');
+        const div = document.createElement('div');
+        div.textContent = `나의 기말고사 점수는 ${score}점, 학점은 ${grade}`;
+        cont.append(div);
+    </script>
+</body>
+</html>

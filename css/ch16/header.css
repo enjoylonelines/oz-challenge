@@ -115,7 +115,9 @@ ul li:hover{
         display: none;
     } */
     ul.block{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
     ul.block li.hidden{
         width: 100%;

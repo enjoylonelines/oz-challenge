@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별찍기</title>
+    <style>
+        .big {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>별 트리 찍기</h1>
+    <div class="star1 big">1번 별</div>
+    <div class="star2 big">2번 별</div>
+    <div class="star3 big">3번 별</div>
+
+    <script>
+        for (let i = 1; i <= 5; i++) {
+            const div = document.createElement('div');
+            for (let j = 1; j <= i; j++) {
+                div.textContent += '*';
+            }
+            star1 = document.querySelector('.star1');
+            star1.append(div);
+        }
+
+        for (let i = 1; i <= 5; i++) {
+            const div = document.createElement('div');
+            for (let j = 1; j <= i; j++) {
+                div.textContent += '*';
+            }
+            star2 = document.querySelector('.star2');
+            star2.append(div);
+        }
+        for (let i = 5; i >= 1; i--) {
+            const div = document.createElement('div');
+            for (let j = 1; j <= i; j++) {
+                div.textContent += '*';
+            }
+            star2 = document.querySelector('.star2');
+            star2.append(div);
+        }
+
+        let n = 1;
+        let space1 = 4, space2 = 1;
+        for (let i = 1; i <= 20; i += 2) {
+            const div = document.createElement('div');
+            if (i <= 10) {
+                for (let j = 1; j <= space1; j++) {
+                    div.textContent += '\u00a0';
+                }
+                space1--;
+                for (let j = 1; j <= i; j++) {
+                    div.textContent += '*';
+                }
+                star3 = document.querySelector('.star3');
+                star3.append(div);
+            }
+            else {
+                for (let j = 1; j <= space2; j++) {
+                    div.textContent += '\u00a0';
+                }
+                space2++;
+                for (let j = 1; j <= i -4*n; j++) {
+                    div.textContent += '*';
+                }
+                star3 = document.querySelector('.star3');
+                star3.append(div);
+                n++;
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
