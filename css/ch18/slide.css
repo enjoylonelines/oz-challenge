@@ -1,0 +1,114 @@
+/* slide */
+.slide-container{
+    width: 100%;
+    height: 34.625rem;
+    margin-top: 7.5rem;
+}
+h3, span{
+    margin: 0;
+    padding: 0;
+}
+.slide-h3{
+    width: 82.25rem;
+    height: 72px;
+    line-height: 71px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 48px;
+    align-items: center;
+}
+.slide-h3::before{
+    content: '';
+    background-image: url('https://www.kakaocorp.com/page/ico_archives.gif');
+    margin-right: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    display: inline-block;
+    background-size: 100%;
+}
+
+/* slide area */
+
+.slide-list{    
+    height: 27.4375rem;
+    margin-top: 3rem;
+}
+.slide-story{
+    
+    width: 48.25rem;
+    height: 100%;
+    padding: 0 1rem;
+}
+.story-left{
+    display: block;
+    width: 20.75rem;
+    height: 100%;
+    padding: 1.875rem;    
+    background-color: #eee;
+    border-radius: 24px 0 0 24px;
+}
+.story-right{
+    display: inline-block;
+    width: 25.5rem;
+    height: 100%;
+    border-radius: 0 24px 24px 0;
+    overflow: hidden;
+}
+.content-top{
+    display: block;
+    width: 100%;
+    height: 32px;
+}
+.content-top img{
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+.top-inner{
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 0.9rem;
+    padding: 5px;
+    position: relative;
+    bottom: 12px;
+}
+.story-left strong{
+    display: block;
+    font-size: 26px;
+    height: 4.4375rem;
+    margin-top: 1rem;
+
+}
+.story-left p{
+    height: 11.375rem;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+.content-bottom{
+    display: block;
+    height: 2rem;
+}
+
+.story-right img{
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes slide {
+    0%{
+        transform: translateX(0);
+      }
+    50%{
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(-50%);
+      }
+      
+      
+}
+
+.slide-box{
+    animation: slide 9s linear infinite; /* 애니메이션의 지속 시간을 조절하세요 */
+  }
+  
