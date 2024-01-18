@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+</head>
+<body>
+    <h1>가위바위보 게임</h1>
+    <div>가위, 바위, 보 중 하나를 입력하세요.</div>
+    <input type="text" class="input">
+    <button>결과 확인</button>
+    <div>당신의 선택: 
+        <span class="userChoice"></span>
+        / 컴퓨터의 선택: 
+        <span class="pcChoice"></span>
+        / 결과:
+        <span class="result"></span>
+    </div>
+    <script>
+        const input = document.querySelector('.input');
+        const button = document.querySelector('button');
+        const userChoice = document.querySelector('.userChoice');
+        const pcChoice = document.querySelector('.pcChoice');
+        const result = document.querySelector('.result');
+        let pc = '';
+        let user = '';
+
+        function onClickBtn(){
+                user = input.value;
+                userChoice.innerText = input.value;
+                input.value = '';
+                const rn = Math.floor(Math.random()*3) + 1;
+                switch(rn){
+                    case 1:
+                        pc = '가위';
+                        pcChoice.innerText = '가위';
+                        switch(user){
+                            case '가위':
+                                result.innerText = '비겼습니다.'
+                                break;
+                            case '바위':
+                                result.innerText = '이겼습니다.'
+                                break;
+                            case '보':
+                                 result.innerText = '졌습니다.'
+                                break;
+                        }
+                        break;
+                    
+                    case 2:
+                        pc = '바위';
+                        pcChoice.innerText = '바위';
+                        switch(user){
+                            case '가위':
+                                result.innerText = '졌습니다.'
+                                break;
+                            case '바위':
+                                result.innerText = '비겼습니다.'
+                                break;
+                            case '보':
+                                 result.innerText = '이겼습니다.'
+                                break;
+                        }
+                        break;
+                    case 3:
+                        pc = '보';
+                        pcChoice.innerText = '보';
+                        switch(user){
+                            case '가위':
+                                result.innerText = '이겼습니다.'
+                                break;
+                            case '바위':
+                                result.innerText = '졌습니다.'
+                                break;
+                            case '보':
+                                 result.innerText = '비겼습니다.'
+                                break;
+                        }
+                        break;
+                }
+        }
+
+        button.addEventListener('click', onClickBtn);
+    </script>
+</body>
+</html>

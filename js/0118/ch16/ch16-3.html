@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지멈춰</title>
+    <style>
+        .cont{
+            width: 1000px;
+            height: 400px;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+
+    </div>
+    <button>멈춰</button>
+
+    <script>
+        const cont = document.querySelector('.cont');
+        const button = document.querySelector('button');
+        let idx = 1;
+        function intervalImg(){
+            cont.style.backgroundImage =`url(./img/${idx}.jpeg)`;
+            idx++;
+            if(idx%5 === 0) idx = 1; 
+        }
+        
+        let inter = setInterval(intervalImg, 1000);
+        function clean(){
+            clearInterval(inter);
+        }
+
+        button.addEventListener('click', clean)
+    </script>
+</body>
+</html>
