@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스톱워치</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .content{
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        button{
+            width: 5rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>⏰스톱워치⏰</h1>
+    <div class="cont">
+        <span class="content">
+            경과 시간:
+            <span class="minSpan">00</span>
+            <span >:</span>
+            <span class="secSpan">00</span>
+            <span>:</span>
+            <span class="milSpan">00</span>
+        </span>
+        <br>
+        <button class="start">start</button>
+        <button class="stop">stop</button>
+        <button class="reset">reset</button>
+    </div>
+    <script>
+        const startBtn = document.querySelector('.start');
+        const stopBtn = document.querySelector('.stop');
+        const resetBtn = document.querySelector('.reset');
+        const minSpan = document.querySelector('.minSpan');
+        const secSpan = document.querySelector('.secSpan');
+        const milSpan = document.querySelector('.milSpan');
+        let interval = '';
+        let curTime = 0;
+        let timer = {
+                startTime: 0,
+                endTime: 0,
+                isRunning: false,
+                isStoping: true,
+                start() {
+                    if (!this.isRunning) this.startTime = new Date().getTime();
+                    else this.startTime += (Date.now() - this.endTime);
+                    
+                    this.isRunning = true;
+                    this.isStoping = false;
+                    interval = setInterval(stopWatch, 10);
+                    console.log("스톱워치 시작");
+               },
+                stop() {
+                    this.isStoping = true;
+                    this.endTime = Date.now(); 
+                    clearInterval(interval);
+                    console.log('스톱워치 멈춤');
+                },
+                reset(){
+                    this.isRunning = false;
+                    minSpan.innerText = '00';
+                    secSpan.innerText = '00';
+                    milSpan.innerText = '00';
+                    console.log('스톱워치 끝');
+                }
+        }
+
+
+        function onClickStartBtn(){
+          if(timer.isStoping) timer.start();
+        }
+        
+        function onClickStopBtn(){
+            if(!timer.isStoping) timer.stop();
+        }
+        function onClickResetBtn(){
+            if(timer.isStoping)timer.reset();
+        }
+
+        function addZero(num){
+            return(num < 10 ? '0' + num : '' + num);
+        }
+
+        function stopWatch(){
+
+            curTime = new Date(Date.now() - timer.startTime); // 현재 타임스탬프를 가져온다
+            let min = curTime.getMinutes();
+            let sec = curTime.getSeconds();
+            let mil = Math.floor(curTime.getMilliseconds() / 10);
+            
+            minSpan.innerText = addZero(min);
+            secSpan.innerText = addZero(sec);
+            milSpan.innerText = addZero(mil);
+        }
+
+ 
+
+        startBtn.addEventListener('click',onClickStartBtn);
+        stopBtn.addEventListener('click',onClickStopBtn);
+        resetBtn.addEventListener('click',onClickResetBtn);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 심화</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        tr {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+    </table>
+
+    <script>
+        const table = document.querySelector('table');
+
+        let tr = document.createElement('tr');
+
+        for (let i = 2; i <= 9; i++) {
+            const th = document.createElement('th');
+            th.textContent = `${i}단`;
+            tr.append(th);
+        }
+        table.append(tr);
+
+        tr = document.createElement('tr');
+
+        for (let i = 2; i <= 9; i++) {
+            const td = document.createElement('td');
+
+            for (let j = 1; j <= 9; j++) {
+                td.innerHTML += `${i} X ${j} = ${i * j}`
+                td.innerHTML += '<br>'
+
+            }
+            tr.append(td);
+        }
+        table.append(tr);
+
+
+    </script>
+</body>
+
+</html>

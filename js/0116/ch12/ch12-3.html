@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운트다운</title>
+</head>
+<body>
+    <div class="cont"></div>
+
+    <script>
+      const cont = document.querySelector('.cont');
+        const h1 = document.createElement('h1');
+      
+    function onClock(){
+        const now = new Date();
+        const then = new Date(2024, 11, 31, 23, 59, 59, 999);
+
+        const month = then.getMonth() - now.getMonth();
+        const date = then.getDate() - now.getDate();
+        const hour = then.getHours() - now.getHours();
+        const minute = then.getMinutes() - now.getMinutes();
+        const second = then.getSeconds() - now.getSeconds();
+
+        h1.innerHTML = `현재 시간: ${new Date()}`;
+        h1.innerHTML += '<br>';
+        h1.innerHTML += `올해의 남은 시간: ${month}개월 ${date}일 ${hour}시간 ${minute}분 ${second}초 남았습니다`
+        cont.append(h1);
+    }
+    setInterval(onClock, 1000);
+    </script>
+</body>
+</html>

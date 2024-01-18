@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스톱워치</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .content{
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        button{
+            width: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>⏰스톱워치⏰</h1>
+    <div class="cont">
+        <span class="content">
+            경과 시간:
+            <span class="minSpan">00</span>
+            <span >:</span>
+            <span class="secSpan">00</span>
+            <span>:</span>
+            <span class="milSpan">00</span>
+        </span>
+        <br>
+        <button class="start">start</button>
+        <button class="stop">stop</button>
+    </div>
+    <script>
+        const startBtn = document.querySelector('.start');
+        const stopBtn = document.querySelector('.stop');
+        let stTime = '';
+        let interval = '';
+        
+        function onClickStartBtn(){
+            stTime = new Date().getTime();
+            interval = setInterval(stopWatch, 10);
+        }
+        
+        function onClickStopBtn(){
+            clearInterval(interval);
+        }
+
+        function addZero(num){
+            return(num < 10 ? '0' + num : '' + num);
+        }
+
+        function stopWatch(){
+            const minSpan = document.querySelector('.minSpan');
+            const secSpan = document.querySelector('.secSpan');
+            const milSpan = document.querySelector('.milSpan');
+            let curTime = new Date().getTime(); // 현재 타임스탬프를 가져온다
+            curTime = new Date(curTime -stTime)
+
+            let min = curTime.getMinutes();
+            let sec = curTime.getSeconds();
+            let mil = Math.floor(curTime.getMilliseconds() / 10);
+            
+            minSpan.innerText = addZero(min);
+            secSpan.innerText = addZero(sec);
+            milSpan.innerText = addZero(mil);
+        }
+
+
+
+
+        startBtn.addEventListener('click',onClickStartBtn);
+        stopBtn.addEventListener('click',onClickStopBtn);
+
+    </script>
+</body>
+</html>
