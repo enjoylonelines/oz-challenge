@@ -30,6 +30,12 @@ input, button, select{
   height: 30px;
   border: 0.5px solid gray;
 }
+button:hover{
+  scale: 1.1;
+}
+button:active{
+  background-color: blueviolet;
+}
 main{
   display: flex;
   justify-content: space-evenly;
@@ -61,6 +67,13 @@ img{
   background-color: #AB4A12;
   right: 100px;
   bottom: 100px;
+}
+
+.more:hover{
+  background-color: violet;
+}
+.tothetop:hover{
+  background-color: violet;
 }
 
 @media all and (max-width: 420px) {
