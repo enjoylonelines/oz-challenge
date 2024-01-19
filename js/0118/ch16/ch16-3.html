@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이미지멈춰</title>
-    <style>
-        .cont{
-            width: 1000px;
-            height: 400px;
-        }
-        button{
-            width: 100px;
-            height: 40px;
-        }
-    </style>
+    <title>아이스크림</title>
+    <style></style>
 </head>
+
 <body>
-    <div class="cont">
-
+    <div class="container">
+        <button class="insert">아이스크림 종류 추가</button>
+        <button class="print-each">아이스크림 이름 출력</button>
+        <button class="print-arr">입력한 아이스크림 목록 출력</button>
+        <h1>입력한 아이스크림 목록:
+            <div class="item-list"></div>
+        </h1>
     </div>
-    <button>멈춰</button>
-
     <script>
-        const cont = document.querySelector('.cont');
-        const button = document.querySelector('button');
-        let idx = 1;
-        function intervalImg(){
-            cont.style.backgroundImage =`url(./img/${idx}.jpeg)`;
-            idx++;
-            if(idx%5 === 0) idx = 1; 
-        }
-        
-        let inter = setInterval(intervalImg, 1000);
-        function clean(){
-            clearInterval(inter);
+        const insert = document.querySelector('.insert');
+        const printEachItem = document.querySelector('.print-each');
+        const printArray = document.querySelector('.print-arr');
+        const itemList = document.querySelector('.item-list');
+        let arr = [];
+        let newArr = [];
+        let prom = '';
+        function onClickInsertItemBtn() {
+            prom = prompt('추가하고 싶은 아이스크림 이름?');
+            arr.push(prom);      
+            newArr.push(prom);
         }
 
-        button.addEventListener('click', clean)
+        function onClickPrintItemBtn() {
+            for(let i = 0; i < newArr.length; i++){
+                alert(newArr[i]);
+            }
+        }
+
+        function onClickPrintArrayBtn() {
+            itemList.innerText = newArr;
+        }
+
+        insert.addEventListener('click', onClickInsertItemBtn);
+        printEachItem.addEventListener('click', onClickPrintItemBtn);
+        printArray.addEventListener('click', onClickPrintArrayBtn);
+
     </script>
 </body>
+
 </html>
