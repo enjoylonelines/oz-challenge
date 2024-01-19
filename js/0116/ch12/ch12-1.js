@@ -2,7 +2,7 @@ const input = document.querySelector('.input');
 let firstNum = '';
 let secondNum = '';
 let ops = '';
-
+let result = 0;
 
 function onClickNumber(event){
     const num = event.target.textContent;
@@ -18,6 +18,28 @@ function onClickNumber(event){
     input.value += num;
 }
 function onClickOps(event){
+    if(firstNum && secondNum){
+        switch(ops){
+            case '+':
+                result = parseInt(firstNum) + parseInt(secondNum);
+                input.value = result;
+                break;
+            case '-':
+                result = parseInt(firstNum) - parseInt(secondNum);
+                input.value = result; 
+                break;
+            case 'X':
+                result = parseInt(firstNum) * parseInt(secondNum);
+                input.value = result;
+                break;
+            case '/':
+                result = parseInt(firstNum) / parseInt(secondNum);
+                input.value = result;
+                break;  
+        }
+        firstNum = result;
+        secondNum = '';
+    }
     ops = event.target.textContent;
 }
 document.querySelector('.one').addEventListener('click', onClickNumber);
@@ -40,19 +62,25 @@ document.querySelector('.equal').addEventListener('click', () => {
     if(secondNum){
         switch(ops){
             case '+':
-                input.value = parseInt(firstNum) + parseInt(secondNum);
+                result = parseInt(firstNum) + parseInt(secondNum);
+                input.value = result;
                 break;
             case '-':
-                input.value = parseInt(firstNum) - parseInt(secondNum);
+                result = parseInt(firstNum) - parseInt(secondNum);
+                input.value = result; 
                 break;
             case 'X':
-                input.value = parseInt(firstNum) * parseInt(secondNum);
+                result = parseInt(firstNum) * parseInt(secondNum);
+                input.value = result;
                 break;
             case '/':
-                input.value = parseInt(firstNum) / parseInt(secondNum);
-                break;
-                        
+                result = parseInt(firstNum) / parseInt(secondNum);
+                input.value = result;
+                break;  
         }
+        firstNum = result;
+        secondNum = '';
+        ops = '';
     }
 });
 document.querySelector('.clear').addEventListener('click', () => {
@@ -60,4 +88,5 @@ document.querySelector('.clear').addEventListener('click', () => {
     secondNum = '';
     ops = '';
     input.value = '';
+    result = 0;
 });
