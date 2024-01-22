@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적표</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        tr,
+        th,
+        td {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>떡잎 유치원 멀리뛰기 결과</h1>
+    <table class="table-all">
+        <tr>
+            <th>이름</th>
+            <th>점수</th>
+        </tr>
+    </table>
+    <h2>75점 이상인 사람: </h2>
+    <table class="table-result"></table>
+    <script>
+        const tableAll = document.querySelector('.table-all');
+        const tableResult = document.querySelector('.table-result');
+        const par = [{
+            name: '짱구',
+            score: 45,
+        },
+        {
+            name: '맹구',
+            score: 75,
+        },
+        {
+            name: '철수',
+            score: 95,
+        },
+        {
+            name: '훈이',
+            score: 50,
+        },
+        {
+            name: '유리',
+            score: 68,
+        },
+        {
+            name: '수지',
+            score: 86,
+        },
+        ]
+
+        for(let i = 0; i < par.length; i++){
+            const tr = document.createElement('tr');
+            const td1 = document.createElement('td');
+            const td2 = document.createElement('td');
+            td1.innerText = par[i].name;
+            td2.innerText = par[i].score;
+            tr.append(td1,td2);
+            tableAll.append(tr);
+        }
+
+        const newPar = par.filter(function(item){
+            return item.score >= 75;
+        })
+
+        newPar.sort(function(a, b){
+            if(a.score < b.score) return 1;
+            if(a.score == b.score) return 0;
+            if(a.score > b.score) return -1;
+            //return b.score - a.score;
+        });
+        
+        for(let i = 0; i < newPar.length; i++){
+            const tr = document.createElement('tr');
+            const td1 = document.createElement('td');
+            const td2 = document.createElement('td');
+            td1.innerText = newPar[i].name;
+            td2.innerText = newPar[i].score;
+            tr.append(td1,td2);
+            tableResult.append(tr);
+        }
+
+    </script>
+</body>
+
+</html>
